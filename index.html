@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>ZEUS AI — Premium Intelligence Platform</title>
+<meta name="description" content="ZEUS AI — The world's most premium AI platform. Created by Godwin Emmanuel Victory.">
+<meta name="theme-color" content="#050505">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>⚡</text></svg>">
+<style>
+/* ============================================================
+   ZEUS AI v6.0 — ULTIMATE PREMIUM PLATFORM
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;700&display=swap');
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#050505;--bg2:#0a0a0a;--bg3:#121212;--bg4:#1a1a1a;--border:#1e1e1e;--border2:#2a2a2a;--orange:#ff7a00;--orange2:#ff9a33;--orange3:#e06a00;--gold:#d4a853;--gold2:#e8c36a;--blue:#3b82f6;--blue2:#60a5fa;--text:#ffffff;--text2:#b0b0b0;--text3:#707070;--rad:10px;--rad2:16px;--rad3:24px;--shadow:0 8px 40px rgba(0,0,0,.5);--glass:rgba(255,255,255,.03);--glass2:rgba(255,255,255,.06)}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;min-height:100vh;line-height:1.6;-webkit-font-smoothing:antialiased}
+::selection{background:var(--orange);color:#000}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}::-webkit-scrollbar-thumb:hover{background:var(--orange)}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes orbFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+.auth-overlay{position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;background:var(--bg);display:flex;align-items:center;justify-content:center}
+.auth-container{width:100%;max-width:420px;padding:20px}
+.auth-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rad3);padding:40px 32px;position:relative;overflow:hidden}
+.auth-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--orange),var(--gold),var(--blue))}
+.auth-logo{text-align:center;margin-bottom:28px}
+.auth-logo .logo-icon{font-size:48px;display:block;margin-bottom:8px;filter:drop-shadow(0 0 20px rgba(255,122,0,.3))}
+.auth-logo h1{font-size:28px;font-weight:900;background:linear-gradient(135deg,var(--orange),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.auth-logo p{font-size:13px;color:var(--text2);margin-top:4px}
+.auth-dev-link{text-align:center;margin-top:10px;font-size:11px;color:var(--text3)}
+.auth-dev-link span{color:var(--gold);cursor:pointer;font-weight:600}
+.auth-dev-link span:hover{text-decoration:underline}
+.auth-tabs{display:flex;gap:0;margin-bottom:20px;background:var(--bg2);border-radius:var(--rad);padding:3px}
+.auth-tab{flex:1;padding:10px;text-align:center;border:none;background:transparent;color:var(--text2);font-size:13px;font-weight:600;cursor:pointer;border-radius:8px;transition:.3s;font-family:inherit}
+.auth-tab.active{background:var(--orange);color:#000}
+.auth-form{display:none}
+.auth-form.active{display:block}
+.form-group{margin-bottom:14px}
+.form-group label{display:block;font-size:11px;font-weight:600;color:var(--text2);margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px}
+.form-input{width:100%;padding:11px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--rad);color:var(--text);font-size:14px;font-family:inherit;outline:none;transition:.3s}
+.form-input:focus{border-color:var(--orange);box-shadow:0 0 20px rgba(255,122,0,.08)}
+.form-input::placeholder{color:var(--text3)}
+.btn-auth{width:100%;padding:13px;background:linear-gradient(135deg,var(--orange),var(--orange3));color:#000;border:none;border-radius:var(--rad);font-size:15px;font-weight:700;cursor:pointer;transition:.3s;font-family:inherit}
+.btn-auth:hover{transform:translateY(-1px);box-shadow:0 8px 30px rgba(255,122,0,.2)}
+.btn-auth:disabled{opacity:.5;cursor:not-allowed}
+.btn-outline{width:100%;padding:12px;background:transparent;border:1px solid var(--border);border-radius:var(--rad);color:var(--text2);font-size:13px;font-weight:600;cursor:pointer;transition:.3s;font-family:inherit}
+.btn-outline:hover{background:var(--glass);color:var(--text);border-color:var(--border2)}
+.auth-divider{display:flex;align-items:center;gap:12px;margin:16px 0;color:var(--text3);font-size:11px}
+.auth-divider::before,.auth-divider::after{content:'';flex:1;height:1px;background:var(--border)}
+.auth-error{background:rgba(255,50,50,.1);border:1px solid rgba(255,50,50,.2);border-radius:var(--rad);padding:10px 14px;margin-bottom:12px;font-size:13px;color:#ff6b6b;display:none}
+.auth-error.show{display:block}
+.auth-link{text-align:center;margin-top:12px;font-size:12px;color:var(--text2)}
+.auth-link a{color:var(--orange);text-decoration:none;font-weight:600;cursor:pointer}
+.auth-link a:hover{text-decoration:underline}
+.modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;z-index:9998;background:rgba(0,0,0,.8);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:20px}
+.modal{background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rad3);max-width:480px;width:100%;max-height:80vh;overflow-y:auto;padding:28px}
+.modal h2{font-size:20px;font-weight:800;margin-bottom:12px}
+.modal p{font-size:13px;color:var(--text2);margin-bottom:12px;line-height:1.6}
+.modal-actions{display:flex;gap:8px;margin-top:16px;justify-content:flex-end}
+.modal-actions button{padding:10px 18px;border-radius:var(--rad);font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;border:none}
+.btn-close{background:var(--bg2);color:var(--text2)}.btn-close:hover{background:var(--bg4);color:var(--text)}
+.btn-primary-modal{background:linear-gradient(135deg,var(--orange),var(--orange3));color:#000}
+.btn-primary-modal:hover{box-shadow:0 4px 20px rgba(255,122,0,.2)}
+.btn-gold-modal{background:linear-gradient(135deg,var(--gold),#b8923a);color:#000}
+.modal-premium-preview{border:2px solid var(--gold);border-radius:var(--rad2);padding:20px;margin:12px 0;text-align:center;background:linear-gradient(135deg,rgba(212,168,83,.05),rgba(212,168,83,.02))}
+.modal-premium-preview .prem-icon{font-size:36px}
+.modal-premium-preview h3{font-size:16px;font-weight:800;color:var(--gold);margin:6px 0}
+.modal-premium-preview ul{text-align:left;list-style:none;margin:10px 0}
+.modal-premium-preview ul li{padding:4px 0;font-size:12px;color:var(--text2)}
+.modal-premium-preview .price{font-size:28px;font-weight:900;background:linear-gradient(135deg,var(--gold),var(--orange));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:8px 0}
+.highlight-code{background:var(--bg2);border:1px solid var(--border);border-radius:var(--rad);padding:10px 14px;font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--gold);text-align:center;margin:8px 0;letter-spacing:2px}
+.upload-area{border:2px dashed var(--border);border-radius:var(--rad);padding:20px;text-align:center;cursor:pointer;transition:.3s;margin:10px 0}
+.upload-area:hover{border-color:var(--orange);background:rgba(255,122,0,.03)}
+.upload-area .icon{font-size:28px;margin-bottom:6px}
+.app{display:none;width:100%;height:100vh;overflow:hidden}
+.sidebar{position:fixed;top:0;left:0;width:260px;height:100%;background:var(--bg3);border-right:1px solid var(--border);z-index:100;display:flex;flex-direction:column;transition:.3s}
+.sidebar-header{padding:14px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border)}
+.sidebar-logo{font-size:22px;filter:drop-shadow(0 0 10px rgba(255,122,0,.2))}
+.sidebar-title{font-size:17px;font-weight:900;background:linear-gradient(135deg,var(--orange),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sidebar-badge{font-size:7px;font-weight:800;text-transform:uppercase;letter-spacing:1px;padding:2px 7px;border-radius:100px;background:var(--orange);color:#000;margin-left:auto}
+.sidebar-premium-badge{font-size:7px;padding:2px 7px;border-radius:100px;background:linear-gradient(135deg,var(--gold),#b8923a);color:#000;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-left:4px}
+.sidebar-user{padding:10px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--border);cursor:pointer;transition:.3s}
+.sidebar-user:hover{background:var(--glass)}
+.user-avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--orange),var(--gold));display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#000;flex-shrink:0}
+.user-name{font-size:12px;font-weight:600}
+.user-status{font-size:10px;color:var(--text3)}
+.sidebar-nav{flex:1;overflow-y:auto;padding:6px}
+.nav-section{margin-bottom:10px}
+.nav-section-title{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--text3);padding:6px 12px 3px}
+.nav-item{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;cursor:pointer;transition:.3s;font-size:12px;color:var(--text2);text-decoration:none;border:none;background:transparent;width:100%;font-family:inherit;text-align:left}
+.nav-item:hover{background:var(--glass);color:var(--text)}
+.nav-item.active{background:rgba(255,122,0,.1);color:var(--orange);border:1px solid rgba(255,122,0,.15)}
+.nav-icon{font-size:16px;width:22px;text-align:center;flex-shrink:0}
+.nav-badge{font-size:9px;background:var(--orange);color:#000;padding:1px 6px;border-radius:100px;margin-left:auto;font-weight:700}
+.nav-premium-badge{font-size:8px;background:linear-gradient(135deg,var(--gold),#b8923a);color:#000;padding:1px 6px;border-radius:100px;margin-left:auto;font-weight:700}
+.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);display:flex;gap:4px;flex-wrap:wrap}
+.sidebar-footer-btn{flex:1;min-width:60px;padding:7px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--text2);font-size:10px;cursor:pointer;transition:.3s;text-align:center;font-family:inherit}
+.sidebar-footer-btn:hover{background:var(--bg4);color:var(--text)}
+.main{position:relative;margin-left:260px;height:100vh;display:flex;flex-direction:column;background:var(--bg)}
+.main-topbar{display:flex;align-items:center;justify-content:space-between;padding:10px 24px;border-bottom:1px solid var(--border);background:var(--bg3);min-height:50px}
+.topbar-left{display:flex;align-items:center;gap:10px}
+.topbar-title{font-size:15px;font-weight:700}
+.topbar-sub{font-size:11px;color:var(--text3)}
+.topbar-right{display:flex;align-items:center;gap:6px}
+.topbar-btn{width:34px;height:34px;border-radius:8px;background:transparent;border:1px solid var(--border);color:var(--text2);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.3s;font-size:14px}
+.topbar-btn:hover{background:var(--glass);color:var(--text);border-color:var(--border2)}
+.topbar-premium-btn{padding:6px 14px;border-radius:8px;background:linear-gradient(135deg,var(--gold),#b8923a);color:#000;border:none;cursor:pointer;font-size:11px;font-weight:700;font-family:inherit;transition:.3s}
+.topbar-premium-btn:hover{transform:scale(1.03);box-shadow:0 4px 20px rgba(212,168,83,.2)}
+.main-content{flex:1;overflow-y:auto;padding:0}
+.page{display:none;padding:20px 24px;max-width:1100px;margin:0 auto;width:100%}
+.page.active{display:block}
+.chat-page{display:flex;flex-direction:column;height:calc(100vh - 50px);padding:0;max-width:100%}
+.chat-messages{flex:1;overflow-y:auto;padding:20px 24px;display:flex;flex-direction:column;gap:10px}
+.chat-msg{display:flex;gap:8px;max-width:85%}
+.chat-msg.user{flex-direction:row-reverse;align-self:flex-end}
+.chat-msg.bot{align-self:flex-start}
+.chat-av{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--orange),var(--gold));display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;color:#000}
+.chat-msg.user .chat-av{background:var(--bg4);color:var(--text)}
+.chat-bubble{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:10px 14px;max-width:100%}
+.chat-msg.user .chat-bubble{background:rgba(255,122,0,.08);border-color:rgba(255,122,0,.12)}
+.chat-text{font-size:13px;line-height:1.7;white-space:pre-wrap;word-break:break-word}
+.chat-text strong{color:var(--orange2)}
+.chat-text code{background:var(--bg2);padding:1px 5px;border-radius:3px;font-family:'JetBrains Mono',monospace;font-size:12px}
+.chat-text pre{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:12px;overflow-x:auto;margin:6px 0;font-size:12px}
+.chat-actions{display:flex;gap:4px;margin-top:4px;padding-top:4px;border-top:1px solid var(--border)}
+.chat-action{background:transparent;border:none;color:var(--text3);cursor:pointer;font-size:10px;padding:2px 5px;border-radius:3px;font-family:inherit}
+.chat-action:hover{background:var(--glass);color:var(--text2)}
+.chat-typing{display:flex;gap:3px;padding:4px 0}
+.chat-typing span{width:6px;height:6px;border-radius:50%;background:var(--orange);animation:typing 1.4s infinite ease-in-out both}
+.chat-typing span:nth-child(2){animation-delay:.16s}
+.chat-typing span:nth-child(3){animation-delay:.32s}
+@keyframes typing{0%,80%,100%{transform:scale(.6);opacity:.4}40%{transform:scale(1);opacity:1}}
+.chat-welcome{text-align:center;padding:50px 20px}
+.chat-welcome-icon{font-size:56px;display:block;margin-bottom:12px;filter:drop-shadow(0 0 30px rgba(255,122,0,.2))}
+.chat-welcome h2{font-size:22px;font-weight:800;margin-bottom:6px}
+.chat-welcome p{color:var(--text2);font-size:13px;max-width:480px;margin:0 auto 16px}
+.chat-suggestions{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.chat-sugg{padding:7px 14px;background:var(--glass);border:1px solid var(--border);border-radius:100px;color:var(--text2);font-size:11px;cursor:pointer;transition:.3s;font-family:inherit}
+.chat-sugg:hover{background:rgba(255,122,0,.08);border-color:rgba(255,122,0,.2);color:var(--orange)}
+.chat-input-area{padding:12px 24px 16px;border-top:1px solid var(--border);background:var(--bg3)}
+.chat-input-wrap{display:flex;align-items:center;gap:6px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--rad2);padding:5px 8px;transition:.3s}
+.chat-input-wrap:focus-within{border-color:var(--orange);box-shadow:0 0 20px rgba(255,122,0,.05)}
+.chat-input{flex:1;background:transparent;border:none;color:var(--text);font-size:13px;font-family:inherit;padding:7px 4px;outline:none;max-height:100px;resize:none}
+.chat-input::placeholder{color:var(--text3)}
+.chat-tools{display:flex;gap:3px}
+.chat-tool{width:34px;height:34px;border-radius:6px;background:transparent;border:none;color:var(--text3);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.3s;font-size:15px;flex-shrink:0}
+.chat-tool:hover{background:var(--glass);color:var(--text2)}
+.chat-send{width:38px;height:38px;border-radius:6px;background:linear-gradient(135deg,var(--orange),var(--orange3));color:#000;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.3s;flex-shrink:0;font-weight:700}
+.chat-send:hover{transform:scale(1.05);box-shadow:0 4px 20px rgba(255,122,0,.2)}
+.chat-send:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.chat-input-footer{display:flex;justify-content:space-between;padding:4px 4px 0;font-size:9px;color:var(--text3)}
+.dash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:20px}
+.dash-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rad2);padding:18px;transition:.4s}
+.dash-card:hover{border-color:var(--border2);transform:translateY(-2px);box-shadow:0 12px 36px rgba(0,0,0,.3)}
+.dash-card-icon{font-size:26px;margin-bottom:8px}
+.dash-card h3{font-size:14px;font-weight:700;margin-bottom:3px}
+.dash-card p{font-size:11px;color:var(--text2);line-height:1.5}
+.dash-card .card-link{display:inline-block;margin-top:8px;font-size:11px;color:var(--orange);font-weight:600;cursor:pointer}
+.section-title{font-size:16px;font-weight:800;margin-bottom:12px;margin-top:24px;display:flex;align-items:center;gap:8px}
+.section-title:first-child{margin-top:0}
+.premium-locked{position:relative}
+.premium-locked::after{content:'🔒 PREMIUM';position:absolute;top:8px;right:8px;font-size:9px;background:var(--gold);color:#000;padding:2px 8px;border-radius:100px;font-weight:700}
+.premium-locked .dash-card{opacity:.6;cursor:pointer}
+.premium-locked .dash-card:hover{opacity:.8}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+.tool-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rad);padding:14px;text-align:center;cursor:pointer;transition:.3s}
+.tool-card:hover{background:var(--bg4);border-color:var(--border2);transform:translateY(-2px)}
+.tool-icon{font-size:28px;margin-bottom:6px}
+.tool-card h4{font-size:12px;font-weight:600}
+.tool-card p{font-size:10px;color:var(--text3);margin-top:3px}
+.settings-section{margin-bottom:20px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--rad2);padding:18px}
+.settings-section h3{font-size:14px;font-weight:700;margin-bottom:10px}
+.setting-row{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border)}
+.setting-row:last-child{border-bottom:none}
+.setting-label{font-size:12px;font-weight:500}
+.setting-desc{font-size:10px;color:var(--text3)}
+.toggle{width:40px;height:22px;border-radius:11px;background:var(--border2);cursor:pointer;position:relative;transition:.3s;border:none;flex-shrink:0}
+.toggle.active{background:var(--orange)}
+.toggle::after{content:'';position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:#fff;transition:.3s}
+.toggle.active::after{left:20px}
+.admin-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:16px}
+.admin-stat{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rad);padding:14px;text-align:center}
+.admin-stat .num{font-size:24px;font-weight:900;background:linear-gradient(135deg,var(--orange),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.admin-stat .lbl{font-size:10px;color:var(--text3);margin-top:3px}
+.admin-feature-toggles{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}
+.admin-feature{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rad);padding:12px;display:flex;align-items:center;justify-content:space-between}
+.admin-feature span{font-size:12px}
+@media(max-width:768px){
+  .sidebar{width:0;overflow:hidden}
+  .sidebar.open{width:260px}
+  .main{margin-left:0}
+  .page{padding:14px}
+  .dash-grid,.tools-grid,.admin-stats{grid-template-columns:1fr}
+  .chat-msg{max-width:95%}
+  .chat-messages{padding:14px}
+  .chat-input-area{padding:10px 14px 14px}
+}
+</style>
+</head>
+<body>
+
+<!-- AUTH OVERLAY -->
+<div class="auth-overlay" id="authOverlay">
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="auth-logo">
+        <span class="logo-icon">⚡</span>
+        <h1>ZEUS AI</h1>
+        <p>Your Intelligent Digital Companion</p>
+        <div class="auth-dev-link">🔐 <span onclick="openAdminLogin()">Admin / Developer Login</span></div>
+      </div>
+      <div class="auth-tabs">
+        <button class="auth-tab active" onclick="switchAuthTab('login')">Sign In</button>
+        <button class="auth-tab" onclick="switchAuthTab('register')">Create Account</button>
+      </div>
+      <div class="auth-error" id="authError"></div>
+      <form class="auth-form active" id="loginForm" onsubmit="handleLogin(event)">
+        <div class="form-group"><label>Username</label><input type="text" class="form-input" id="loginUser" placeholder="Enter username" required /></div>
+        <div class="form-group"><label>Password</label><input type="password" class="form-input" id="loginPass" placeholder="Enter password" required /></div>
+        <button type="submit" class="btn-auth" id="loginBtn">Sign In →</button>
+        <div class="auth-divider">or</div>
+        <button type="button" class="btn-outline" onclick="guestLogin()">👤 Continue as Guest</button>
+        <div class="auth-link">No account? <a onclick="switchAuthTab('register')">Create one</a></div>
+      </form>
+      <form class="auth-form" id="registerForm" onsubmit="handleRegister(event)">
+        <div class="form-group"><label>Username</label><input type="text" class="form-input" id="regUser" placeholder="Choose username" required /></div>
+        <div class="form-group"><label>Display Name</label><input type="text" class="form-input" id="regName" placeholder="Your name" /></div>
+        <div class="form-group"><label>Password</label><input type="password" class="form-input" id="regPass" placeholder="Choose password" required minlength="4" /></div>
+        <button type="submit" class="btn-auth" id="regBtn">Create Account →</button>
+        <div class="auth-link">Already have one? <a onclick="switchAuthTab('login')">Sign in</a></div>
+      </form>
+      <div style="text-align:center;margin-top:14px;font-size:10px;color:var(--text3)">
+        Created by <strong>ZEUS</strong> (Godwin Emmanuel Victory) • 📞 +234 906 676 0078
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN APP -->
+<div class="app" id="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <span class="sidebar-logo">⚡</span>
+      <span class="sidebar-title">ZEUS AI</span>
+      <span class="sidebar-badge">✦v6</span>
+      <span class="sidebar-premium-badge" id="sidebarPremBadge" style="display:none">PREMIUM</span>
+    </div>
+    <div class="sidebar-user" onclick="showAbout()">
+      <div class="user-avatar" id="sideAvatar">U</div>
+      <div>
+        <div class="user-name" id="sideName">User</div>
+        <div class="user-status" id="sideStatus">⚡ Online</div>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-section"><div class="nav-section-title">Main</div>
+        <button class="nav-item active" onclick="navigate('chat')"><span class="nav-icon">💬</span> Smart Chat</button>
+        <button class="nav-item" onclick="navigate('dashboard')"><span class="nav-icon">🔮</span> Dashboard</button>
+        <button class="nav-item" onclick="navigate('agents')"><span class="nav-icon">🤖</span> AI Agents</button></div>
+      <div class="nav-section"><div class="nav-section-title">Tools</div>
+        <button class="nav-item" onclick="navigate('vision')"><span class="nav-icon">👁️</span> Vision AI <span class="nav-badge">NEW</span></button>
+        <button class="nav-item" onclick="navigate('voice')"><span class="nav-icon">🎤</span> Voice AI</button>
+        <button class="nav-item" onclick="navigate('search')"><span class="nav-icon">🌐</span> Search AI</button>
+        <button class="nav-item" onclick="navigate('coding')"><span class="nav-icon">💻</span> Coding Assistant</button>
+        <button class="nav-item" onclick="navigate('documents')"><span class="nav-icon">📄</span> Document AI</button>
+        <button class="nav-item" onclick="navigate('images')"><span class="nav-icon">🎨</span> Image Prompts</button>
+        <button class="nav-item" onclick="navigate('gaming')"><span class="nav-icon">🎮</span> Gaming Mode</button></div>
+      <div class="nav-section"><div class="nav-section-title">Library</div>
+        <button class="nav-item" onclick="navigate('prompts')"><span class="nav-icon">📚</span> Prompt Library <span class="nav-badge">100+</span></button>
+        <button class="nav-item" onclick="navigate('academy')"><span class="nav-icon">🎓</span> Dev Academy</button></div>
+      <div class="nav-section"><div class="nav-section-title">Premium</div>
+        <button class="nav-item" onclick="navigate('premium')"><span class="nav-icon">👑</span> Upgrade to Premium <span class="nav-premium-badge">₦8,000</span></button></div>
+      <div class="nav-section"><div class="nav-section-title">Workspace</div>
+        <button class="nav-item" onclick="navigate('workspace')"><span class="nav-icon">📁</span> Workspace</button>
+        <button class="nav-item" onclick="navigate('memory')"><span class="nav-icon">🧠</span> Memory</button></div>
+      <div class="nav-section"><div class="nav-section-title">System</div>
+        <button class="nav-item" onclick="navigate('settings')"><span class="nav-icon">⚙️</span> Settings</button>
+        <button class="nav-item" id="adminNavItem" onclick="navigate('admin')" style="display:none"><span class="nav-icon">🛡️</span> Admin Panel</button></div>
+    </nav>
+    <div class="sidebar-footer">
+      <button class="sidebar-footer-btn" onclick="navigate('chat')">💬 Chat</button>
+      <button class="sidebar-footer-btn" onclick="clearChat()">🗑️ Clear</button>
+      <button class="sidebar-footer-btn" onclick="logout()">🚪 Exit</button>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="main-topbar">
+      <div class="topbar-left"><div><div class="topbar-title" id="pageTitle">Smart Chat</div><div class="topbar-sub" id="pageSub">ZEUS AI Engine • Premium Intelligence</div></div></div>
+      <div class="topbar-right">
+        <button class="topbar-premium-btn" onclick="navigate('premium')">👑 Premium</button>
+        <button class="topbar-btn" onclick="navigate('dashboard')" title="Dashboard">🔮</button>
+        <button class="topbar-btn" onclick="showAbout()" title="About ZEUS">⚡</button>
+        <button class="topbar-btn" onclick="logout()" title="Logout">🚪</button>
+      </div>
+    </div>
+
+    <div class="main-content" id="mainContent">
+      <!-- CHAT -->
+      <div class="page active" id="page-chat">
+        <div class="chat-page">
+          <div class="chat-messages" id="chatMessages">
+            <div class="chat-welcome" id="chatWelcome">
+              <span class="chat-welcome-icon">⚡</span>
+              <h2>Welcome to ZEUS AI</h2>
+              <p>Your intelligent digital companion. I'm powered by the ZEUS AI Engine — built for deep conversations, coding, creativity, learning, and gaming.</p>
+              <div class="chat-suggestions">
+                <button class="chat-sugg" onclick="quickPrompt('Who is ZEUS?')">👑 Who is ZEUS?</button>
+                <button class="chat-sugg" onclick="quickPrompt('Teach me Python')">🐍 Teach Python</button>
+                <button class="chat-sugg" onclick="quickPrompt('Search the web for latest tech news')">🌐 Search web</button>
+                <button class="chat-sugg" onclick="quickPrompt('Write a poem about AI')">📝 Write a poem</button>
+                <button class="chat-sugg" onclick="quickPrompt('Create a coding project idea')">💻 Project idea</button>
+                <button class="chat-sugg" onclick="quickPrompt('What is premium on ZEUS AI?')">👑 Premium info</button>
+              </div>
+            </div>
+          </div>
+          <div class="chat-input-area">
+            <div class="chat-input-wrap">
+              <div class="chat-tools">
+                <button class="chat-tool" onclick="document.getElementById('visionChatFile').click()" title="Upload Image">👁️</button>
+                <input type="file" id="visionChatFile" accept="image/*" style="display:none" onchange="handleChatVision(this)" />
+                <button class="chat-tool" id="micChatBtn" onclick="toggleMicChat()" title="Voice Input">🎤</button>
+              </div>
+              <textarea class="chat-input" id="chatInput" placeholder="Ask ZEUS anything..." rows="1" oninput="autoResize(this)"></textarea>
+              <button class="chat-send" id="chatSendBtn" onclick="sendChatMsg()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+            </div>
+            <div class="chat-input-footer">
+              <span id="chatStatus">ZEUS AI • v6.0</span>
+              <span id="chatModel">⚡ OpenRouter AI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DASHBOARD -->
+      <div class="page" id="page-dashboard">
+        <div class="section-title">🔮 Premium Dashboard</div>
+        <div class="dash-grid">
+          <div class="dash-card"><div class="dash-card-icon">💬</div><h3>Smart Chat</h3><p>Intelligent conversations with ZEUS AI</p><span class="card-link" onclick="navigate('chat')">Open →</span></div>
+          <div class="dash-card"><div class="dash-card-icon">👁️</div><h3>Vision AI</h3><p>Analyze images, read text, identify objects</p><span class="card-link" onclick="navigate('vision')">Try →</span></div>
+          <div class="dash-card"><div class="dash-card-icon">🎤</div><h3>Voice AI</h3><p>Speech-to-text and natural voice responses</p><span class="card-link" onclick="navigate('voice')">Try →</span></div>
+          <div class="dash-card"><div class="dash-card-icon">🌐</div><h3>Search AI</h3><p>Search the web, news, research instantly</p><span class="card-link" onclick="navigate('search')">Search →</span></div>
+          <div class="dash-card"><div class="dash-card-icon">💻</div><h3>Coding Assistant</h3><p>Write, debug, optimize any code</p><span class="card-link" onclick="navigate('coding')">Code →</span></div>
+          <div class="dash-card"><div class="dash-card-icon">🎮</div><h3>Gaming Mode</h3><p>Free Fire, PUBG, COD — tips & strategies</p><span class="card-link" onclick="navigate('gaming')">Game →</span></div>
+          <div class="dash-card"><div class="dash-card-icon">🤖</div><h3>AI Agents</h3><p>Custom agents with unique personalities</p><span class="card-link" onclick="navigate('agents')">Meet →</span></div>
+          <div class="dash-card premium-locked"><div class="dash-card" style="margin:0;border:none;background:transparent;padding:0"><div class="dash-card-icon">🎨</div><h3>Image Generator</h3><p>Generate premium AI art & designs</p><span class="card-link" onclick="navigate('premium')">🔒 Premium</span></div></div>
+        </div>
+        <div class="section-title">⚡ Quick Actions</div>
+        <div class="tools-grid">
+          <div class="tool-card" onclick="quickPrompt('Who is ZEUS?');navigate('chat')"><div class="tool-icon">👑</div><h4>About ZEUS</h4></div>
+          <div class="tool-card" onclick="quickPrompt('Motivate me today');navigate('chat')"><div class="tool-icon">🔥</div><h4>Motivation</h4></div>
+          <div class="tool-card" onclick="quickPrompt('Teach me something new');navigate('chat')"><div class="tool-icon">🧠</div><h4>Learn</h4></div>
+          <div class="tool-card" onclick="quickPrompt('Help me debug my code');navigate('chat')"><div class="tool-icon">🔧</div><h4>Debug</h4></div>
+        </div>
+      </div>
+
+      <!-- VISION -->
+      <div class="page" id="page-vision">
+        <div class="section-title">👁️ Vision AI</div>
+        <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--rad2);padding:24px;text-align:center">
+          <div style="font-size:44px;margin-bottom:10px">🖼️</div>
+          <h3 style="font-size:16px;font-weight:700;margin-bottom:6px">Analyze Any Image</h3>
+          <p style="color:var(--text2);font-size:12px;margin-bottom:14px">Upload an image — ZEUS will describe it, read text, and identify objects using Vision AI.</p>
+          <input type="file" accept="image/*" style="display:none" id="visionUploadPage" onchange="handleVisionPageFile(this)" />
+          <button class="btn-auth" style="width:auto;display:inline-flex" onclick="document.getElementById('visionUploadPage').click()">📤 Upload Image</button>
+          <div id="visionPagePreview" style="margin-top:14px;display:none"><img id="visionPageImg" style="max-width:280px;max-height:280px;border-radius:var(--rad2);border:1px solid var(--border)" /></div>
+          <div id="visionPageResult" style="margin-top:14px;text-align:left;background:var(--bg2);border:1px solid var(--border);border-radius:var(--rad);padding:16px;display:none">
+            <div style="font-size:11px;color:var(--text3);margin-bottom:6px">🔍 Analysis</div>
+            <div id="visionPageText" style="font-size:13px;line-height:1.7"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VOICE -->
+      <div class="page" id="page-voice">
+        <div class="section-title">🎤 Voice AI</div>
+        <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--rad2);padding:24px;text-align:center">
+          <div style="font-size:44px;margin-bottom:10px">🎙️</div>
+          <h3 style="font-size:16px;font-weight:700;margin-bottom:6px">Voice-Powered AI</h3>
+          <p style="color:var(--text2);font-size:12px;margin-bottom:14px">Speak naturally and ZEUS responds. Click record and start talking.</p>
+          <button class="btn-auth" style="width:auto;display:inline-flex;gap:6px" onclick="toggleVoiceRecord()">🎤 <span id="voiceBtnText">Start Recording</span></button>
+          <div id="voiceWaveArea" style="margin-top:12px;display:none">
+            <div style="display:flex;align-items:center;justify-content:center;gap:3px;height:30px">
+              <span style="width:3px;height:15px;background:var(--orange);border-radius:2px;animation:vWave .5s infinite alternate"></span>
+              <span style="width:3px;height:25px;background:var(--orange);border-radius:2px;animation:vWave .5s infinite alternate .1s"></span>
+              <span style="width:3px;height:10px;background:var(--orange);border-radius:2px;animation:vWave .5s infinite alternate .2s"></span>
+              <span style="width:3px;height:30px;background:var(--orange);border-radius:2px;animation:vWave .5s infinite alternate .3s"></span>
+              <span style="width:3px;height:20px;background:var(--orange);border-radius:2px;animation:vWave .5s infinite alternate .15s"></span>
+            </div>
+          </div>
+          <div id="voiceResult" style="margin-top:10px;font-size:13px;color:var(--text2);display:none"></div>
+        </div>
+      </div>
+
+      <!-- SEARCH -->
+      <div class="page" id="page-search">
+        <div class="section-title">🌐 Search AI</div>
+        <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--rad2);padding:24px">
+          <p style="color:var(--text2);font-size:12px;margin-bottom:14px">Ask ZEUS to search the web for news, information, research, and more.</p>
+          <div style="display:flex;gap:8px">
+            <input class="form-input" id="searchQuery" placeholder="Search the web..." onkeydown="if(event.key==='Enter')webSearch()" />
+            <button class="btn-auth" style="width:auto;padding:12px 20px;flex-shrink:0" onclick="webSearch()">🔍 Search</button>
+          </div>
+          <div class="tools-grid" style="margin-top:14px">
+            <div class="tool-card" onclick="quickPrompt('Search the web for latest technology news 2026');navigate('chat')"><div class="tool-icon">📰</div><h4>Tech News</h4></div>
+            <div class="tool-card" onclick="quickPrompt('Search the web for Artificial Intelligence updates');navigate('chat')"><div class="tool-icon">🤖</div><h4>AI News</h4></div>
+            <div class="tool-card" onclick="quickPrompt('Search the web for Nigeria latest news today');navigate('chat')"><div class="tool-icon">🇳🇬</div><h4>Nigeria News</h4></div>
+            <div class="tool-card" onclick="quickPrompt('Search the web for Free Fire updates 2026');navigate('chat')"><div class="tool-icon">🎮</div><h4>Gaming News</h4></div>
+          </div>
+          <div id="searchResults" style="margin-top:14px;display:none"></div>
+        </div>
+      </div>
+
+      <!-- CODING, DOCUMENTS, IMAGES, GAMING, AGENTS -->
+      <div class="page" id="page-coding"><div class="section-title">💻 Coding Assistant</div><div class="dash-grid">
+        <div class="dash-card"><div class="dash-card-icon">🐍</div><h3>Python</h3><p>Write, debug, optimize Python code</p><span class="card-link" onclick="quickPrompt('Write a Python calculator app with GUI');navigate('chat')">Generate →</span></div>
+        <div class="dash-card"><div class="dash-card-icon">⚛️</div><h3>React</h3><p>Build components, hooks, full apps</p><span class="card-link" onclick="quickPrompt('Create a React todo list with local storage');navigate('chat')">Generate →</span></div>
+        <div class="dash-card"><div class="dash-card-icon">🌐</div><h3>HTML/CSS</h3><p>Beautiful responsive websites</p><span class="card-link" onclick="quickPrompt('Build a modern landing page HTML CSS');navigate('chat')">Generate →</span></div>
+        <div class="dash-card"><div class="dash-card-icon">☕</div><h3>JavaScript</h3><p>Vanilla JS, Node.js, Express</p><span class="card-link" onclick="quickPrompt('Write a Node.js REST API with Express');navigate('chat')">Generate →</span></div>
+        <div class="dash-card"><div class="dash-card-icon">🗄️</div><h3>SQL</h3><p>Queries, optimization, design</p><span class="card-link" onclick="quickPrompt('Write SQL queries for an e-commerce database');navigate('chat')">Generate →</span></div>
+        <div class="dash-card"><div class="dash-card-icon">🔧</div><h3>Debug Code</h3><p>Find and fix bugs in any language</p><span class="card-link" onclick="quickPrompt('Help me debug: my code is not working');navigate('chat')">Debug →</span></div>
+      </div></div>
+
+      <div class="page" id="page-documents">
+        <div class="section-title">📄 Document AI</div>
+        <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--rad2);padding:24px;text-align:center">
+          <div style="font-size:44px;margin-bottom:10px">📄</div>
+          <h3 style="font-size:16px;font-weight:700;margin-bottom:6px">Analyze Documents</h3>
+          <p style="color:var(--text2);font-size:12px;margin-bottom:14px">Paste text from PDFs, DOCX, or TXT files. ZEUS will summarize, translate, or analyze.</p>
+          <textarea class="form-input" style="min-height:100px;margin-bottom:10px;font-size:12px" placeholder="Paste your document text here..." id="docText"></textarea>
+          <div style="display:flex;gap:6px;justify-content:center;flex-wrap:wrap">
+            <button class="btn-auth" style="width:auto;padding:10px 16px;font-size:12px" onclick="processDoc('summarize')">📝 Summarize</button>
+            <button class="btn-auth" style="width:auto;padding:10px 16px;font-size:12px;background:var(--bg2);color:var(--text)" onclick="processDoc('translate')">🌍 Translate</button>
+            <button class="btn-auth" style="width:auto;padding:10px 16px;font-size:12px;background:var(--bg2);color:var(--text)" onclick="processDoc('analyze')">🔍 Analyze</button>
+          </div>
+          <div id="docResult" style="margin-top:14px;text-align:left;background:var(--bg2);border:1px solid var(--border);border-radius:var(--rad);padding:16px;display:none"><div id="docResultText" style="font-size:13px;line-height:1.7"></div></div>
+        </div>
+      </div>
+
+      <div class="page" id="page-images">
+        <div class="section-title">🎨 Image Prompt Generator</div>
+        <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--rad2);padding:24px;text-align:center">
+          <div style="font-size:44px;margin-bottom:10px">🎨</div>
+          <h3 style="font-size:16px;font-weight:700;margin-bottom:6px">Generate Premium Image Prompts</h3>
+          <p style="color:var(--text2);font-size:12px;margin-bottom:14px">Describe what you want and ZEUS creates detailed image prompts you can use with any AI image generator.</p>
+          <textarea class="form-input" style="min-height:80px;margin-bottom:10px;font-size:12px" placeholder="Describe the image you want..." id="imagePromptDesc"></textarea>
+          <div style="display:flex;gap:6px;justify-content:center;flex-wrap:wrap">
+            <button class="btn-auth" style="width:auto;padding:10px 18px;font-size:12px" onclick="genImagePrompt()">✨ Generate Prompt</button>
+            <button class="btn-auth" style="width:auto;padding:10px 18px;font-size:12px;background:var(--bg2);color:var(--text)" onclick="document.getElementById('imagePromptDesc').value='A futuristic African city with neon lights, flying cars, and a giant ZEUS logo in the sky'">🎲 Try Example</button>
+          </div>
+          <div id="imagePromptResult" style="margin-top:14px;text-align:left;background:var(--bg2);border:1px solid var(--border);border-radius:var(--rad);padding:16px;display:none">
+            <div style="font-size:11px;color:var(--text3);margin-bottom:6px">✨ Generated Prompt</div>
+            <div id="imagePromptText" style="font-size:13px;line-height:1.7"></div>
+            <button class="chat-action" style="margin-top:8px;font-size:12px" onclick="copyPromptResult()">📋 Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="page" id="page-gaming">
+        <div class="section-title">🎮 Gaming Mode</div>
+        <p style="color:var(--text2);font-size:12px;margin-bottom:16px">Your dedicated gaming assistant. Tips, strategies, news, and performance optimization.</p>
+        <div class="dash-grid">
+          <div class="dash-card"><div class="dash-card-icon">🔥</div><h3>Free Fire</h3><p>Sensitivity, tips, weapon stats, rank push</p><span class="card-link" onclick="quickPrompt('Give me Free Fire tips for ranked push');navigate('chat')">Get Tips →</span></div>
+          <div class="dash-card"><div class="dash-card-icon">💥</div><h3>PUBG Mobile</h3><p>Sensitivity, strategies, map guides</p><span class="card-link" onclick="quickPrompt('Best PUBG Mobile sensitivity settings');navigate('chat')">Get Tips →</span></div>
+          <div class="dash-card"><div class="dash-card-icon">🔫</div><h3>COD Mobile</h3><p>Loadouts, perks, ranked tips</p><span class="card-link" onclick="quickPrompt('Best COD Mobile loadout for ranked');navigate('chat')">Get Tips →</span></div>
+          <div class="dash-card"><div class="dash-card-icon">⛏️</div><h3>Minecraft</h3><p>Building, redstone, survival</p><span class="card-link" onclick="quickPrompt('Minecraft survival tips for beginners');navigate('chat')">Get Tips →</span></div>
+          <div class="dash-card"><div class="dash-card-icon">🎯</div><h3>Fortnite</h3><p>Building, weapons, tournament info</p><span class="card-link" onclick="quickPrompt('Fortnite building strategies for beginners');navigate('chat')">Get Tips →</span></div>
+          <div class="dash-card"><div class="dash-card-icon">📊</div><h3>Sensitivity Calculator</h3><p>Perfect settings for your device</p><span class="card-link" onclick="quickPrompt('Help me calculate best sensitivity for Free Fire on Android');navigate('chat')">Calculate →</span></div>
+        </div>
+      </div>
+
+      <div class="page" id="page-agents">
+        <div class="section-title">🤖 AI Agents</div>
+        <p style="color:var(--text2);font-size:12px;margin-bottom:16px">Custom AI agents with unique personalities. Click to activate.</p>
+        <div class="dash-grid">
+          <div class="dash-card"><div class="dash-card-icon">👨‍🏫</div><h3>Teacher</h3><p>Learn any subject step by step</p><span class="card-link" onclick="activateAgent('teacher')">Activate →</span></div>
+          <div class="dash-card"><div class="dash-card-icon">🏋️</div><h3>Fitness Coach</h3><p>Workout plans, diet tips, form</p><span class="card-link" onclick="activateAgent('fitness')">Activate →</span></div>
+          <div class="dash-card"><div class="dash-card-icon">💼</div><h3>Business Advisor</h3><p>Startup tips, marketing, strategy</p><span class="card-link" onclick="activateAgent('business')">Activate →</span></div>
+          <div class="dash-card"><div class="dash-card-icon">🌍</div><h3>Translator</h3><p>Translate any languages</p><span class="card-link" onclick="activateAgent('translator')">Activate →</span></div>
+          <div class="dash-card"><div class="dash-card-icon">⚕️</div><h3>Health Assistant</h3><p>Wellness tips, health advice</p><span class="card-link" onclick="activateAgent('health')">Activate →</span></div>
+          <div class="dash-card"><div class="dash-card-icon">💻</div><h3>Developer</h3><p>Code generation, debugging</p><span class="card-link" onclick="activateAgent('developer')">Activate →</span></div>
+        </div>
+      </div>
+
+      <!-- PREMIUM -->
+      <div class="page" id="page-premium">
+        <div class="section-title">👑 ZEUS AI Premium</div>
+        <div style="background:var(--bg3);border:1px solid var(--gold);border-radius:var(--rad3);padding:28px;text-align:center">
+          <div style="font-size:48px;margin-bottom:10px">👑</div>
+          <h2 style="font-size:22px;font-weight:900;margin-bottom:6px">Unlock Premium</h2>
+          <p style="color:var(--text2);font-size:13px;margin-bottom:16px;max-width:400px;margin-left:auto;margin-right:auto">Get access to exclusive premium features, priority support, and advanced tools.</p>
+          <div id="premiumUnlocked" style="display:none">
+            <div style="background:rgba(212,168,83,.1);border:1px solid var(--gold);border-radius:var(--rad2);padding:20px;margin-bottom:16px">
+              <div style="font-size:28px;margin-bottom:6px">✅</div>
+              <h3 style="color:var(--gold);font-size:16px;font-weight:800">PREMIUM UNLOCKED!</h3>
+              <p style="color:var(--text2);font-size:12px">You have full access to all premium features. Enjoy! ⚡</p>
+            </div>
+          </div>
+          <div id="premiumLocked">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:16px">
+              <div class="dash-card" style="border:1px solid var(--border2)"><div class="dash-card-icon">🎨</div><h3>Image Generator</h3><p>AI art & design prompts</p></div>
+              <div class="dash-card" style="border:1px solid var(--border2)"><div class="dash-card-icon">⚡</div><h3>Priority Speed</h3><p>Faster responses</p></div>
+              <div class="dash-card" style="border:1px solid var(--border2)"><div class="dash-card-icon">📊</div><h3>Advanced Analytics</h3><p>Detailed insights</p></div>
+              <div class="dash-card" style="border:1px solid var(--border2)"><div class="dash-card-icon">🎯</div><h3>Premium Agents</h3><p>Exclusive AI agents</p></div>
+            </div>
+            <div style="background:rgba(212,168,83,.05);border:1px solid var(--border2);border-radius:var(--rad2);padding:20px;margin-bottom:16px">
+              <h3 style="font-size:16px;font-weight:700">💳 Payment Details</h3>
+              <div class="price" style="font-size:32px;font-weight:900;background:linear-gradient(135deg,var(--gold),var(--orange));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0">₦8,000</div>
+              <p style="font-size:12px;color:var(--text2)">One-time payment • Lifetime access</p>
+            </div>
+            <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rad2);padding:16px;margin-bottom:14px;text-align:left">
+              <h4 style="font-size:13px;font-weight:700;margin-bottom:8px">📱 Bank Transfer / Opay</h4>
+              <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--rad);padding:12px;margin-bottom:8px">
+                <div style="font-size:11px;color:var(--text3)">Account Number</div>
+                <div style="font-size:18px;font-weight:800;font-family:'JetBrains Mono',monospace;color:var(--orange)">9066760078</div>
+                <div style="font-size:11px;color:var(--text3)">Bank: <strong style="color:var(--text)">Opay</strong></div>
+                <div style="font-size:11px;color:var(--text3)">Name: <strong style="color:var(--text)">Christana Godwin Okon</strong></div>
+              </div>
+              <p style="font-size:11px;color:var(--text3)">After payment, send screenshot to <strong style="color:var(--orange)">+234 906 676 0078</strong> on WhatsApp. Admin will verify and give you your Premium Code.</p>
+            </div>
+            <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rad2);padding:16px;margin-bottom:14px">
+              <h4 style="font-size:13px;font-weight:700;margin-bottom:8px;text-align:left">🔑 Already have a Premium Code?</h4>
+              <div style="display:flex;gap:8px"><input class="form-input" id="premiumCodeInput" placeholder="Enter ZEUS-PREM-XXXX" style="text-transform:uppercase;font-family:'JetBrains Mono',monospace;font-size:12px" /><button class="btn-auth" style="width:auto;padding:12px 16px;font-size:12px;flex-shrink:0" onclick="redeemPremium()">Unlock</button></div>
+            </div>
+            <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rad2);padding:16px">
+              <h4 style="font-size:13px;font-weight:700;margin-bottom:8px;text-align:left">📤 Upload Payment Screenshot</h4>
+              <p style="font-size:11px;color:var(--text3);margin-bottom:8px;text-align:left">Send directly to admin on WhatsApp for verification.</p>
+              <a href="https://wa.me/2349066760078?text=I%27ve%20paid%20for%20ZEUS%20AI%20Premium%20(%238000)%20-%20here%27s%20my%20screenshot" target="_blank" class="btn-auth" style="display:inline-flex;width:auto;padding:10px 20px;font-size:12px;text-decoration:none;gap:6px;background:#25d366">💬 Send to WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROMPTS -->
+      <div class="page" id="page-prompts">
+        <div class="section-title">📚 Prompt Library</div>
+        <p style="color:var(--text2);font-size:12px;margin-bottom:14px">Click any prompt to use instantly in chat.</p>
+        <div class="dash-grid" id="promptGrid"></div>
+      </div>
+
+      <!-- ACADEMY -->
+      <div class="page" id="page-academy">
+        <div class="section-title">🎓 ZEUS Dev Academy</div>
+        <p style="color:var(--text2);font-size:12px;margin-bottom:16px">Free degree-level curriculum for young developers — by ZEUS (Godwin Emmanuel Victory)</p>
+        <div class="dash-grid">
+          <div class="dash-card"><div class="dash-card-icon">🌐</div><h3>Web Development</h3><p>HTML → CSS → JavaScript → React → Node.js</p></div>
+          <div class="dash-card"><div class="dash-card-icon">🐍</div><h3>Python Programming</h3><p>Basics → OOP → APIs → Automation → ML</p></div>
+          <div class="dash-card"><div class="dash-card-icon">☕</div><h3>JavaScript Mastery</h3><p>DOM → Async → Node → Express → REST APIs</p></div>
+          <div class="dash-card"><div class="dash-card-icon">🗄️</div><h3>Database Systems</h3><p>SQL → MySQL → MongoDB → Design & Optimization</p></div>
+          <div class="dash-card"><div class="dash-card-icon">🔐</div><h3>Cybersecurity</h3><p>Ethical Hacking → OWASP → Pen Testing</p></div>
+          <div class="dash-card"><div class="dash-card-icon">🤖</div><h3>AI & Machine Learning</h3><p>ML → Neural Networks → NLP → LLMs</p></div>
+          <div class="dash-card"><div class="dash-card-icon">💎</div><h3>DSA & Algorithms</h3><p>Arrays → Trees → Graphs → DP → FAANG Prep</p></div>
+          <div class="dash-card"><div class="dash-card-icon">☁️</div><h3>Cloud & DevOps</h3><p>Git → Docker → CI/CD → AWS → Kubernetes</p></div>
+        </div>
+      </div>
+
+      <!-- WORKSPACE, MEMORY, SETTINGS -->
+      <div class="page" id="page-workspace">
+        <div class="section-title">📁 Workspace</div>
+        <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--rad2);padding:24px;text-align:center">
+          <div style="font-size:40px;margin-bottom:10px">📁</div>
+          <h3 style="font-size:16px;font-weight:700;margin-bottom:6px">Your Workspace</h3>
+          <p style="color:var(--text2);font-size:12px;margin-bottom:14px">Organize projects, notes, tasks, and bookmarks. Ask ZEUS to help you organize!</p>
+          <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+            <button class="btn-outline" style="width:auto;padding:10px 16px;font-size:11px" onclick="quickPrompt('Create a study plan for learning web development');navigate('chat')">📋 Study Plan</button>
+            <button class="btn-outline" style="width:auto;padding:10px 16px;font-size:11px" onclick="quickPrompt('Help me organize my daily task list');navigate('chat')">✅ Task List</button>
+            <button class="btn-outline" style="width:auto;padding:10px 16px;font-size:11px" onclick="quickPrompt('Create project notes for my app idea');navigate('chat')">📝 Smart Notes</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="page" id="page-memory">
+        <div class="section-title">🧠 Memory</div>
+        <div class="settings-section">
+          <div class="setting-row"><div><div class="setting-label">Enable Memory</div><div class="setting-desc">ZEUS remembers your preferences</div></div><button class="toggle active" id="memoryToggle" onclick="this.classList.toggle('active')"></button></div>
+          <div class="setting-row"><div><div class="setting-label">Saved Memories</div><div class="setting-desc">Conversations & preferences stored</div></div><span style="font-size:11px;color:var(--text3)" id="memoryCount">0 items</span></div>
+          <button class="btn-outline" style="margin-top:10px;width:auto;padding:10px 16px;font-size:11px" onclick="quickPrompt('What do you remember about me?');navigate('chat')">Ask ZEUS What I Remember</button>
+        </div>
+      </div>
+
+      <div class="page" id="page-settings">
+        <div class="section-title">⚙️ Settings</div>
+        <div class="settings-section">
+          <h3>Appearance</h3>
+          <div class="setting-row"><div><div class="setting-label">Dark Theme</div><div class="setting-desc">Premium dark mode</div></div><button class="toggle active"></button></div>
+          <div class="setting-row"><div><div class="setting-label">Accent</div><div class="setting-desc">ZEUS Signature Orange</div></div><span style="font-size:11px;color:var(--orange)">● Orange</span></div>
+        </div>
+        <div class="settings-section">
+          <h3>Communication</h3>
+          <div class="setting-row"><div><div class="setting-label">Voice Output</div><div class="setting-desc">AI speaks responses</div></div><button class="toggle active" id="voiceOutputToggle" onclick="this.classList.toggle('active');ZEUS_voiceOut=!ZEUS_voiceOut"></button></div>
+          <div class="setting-row"><div><div class="setting-label">Typing Animation</div><div class="setting-desc">Animated text</div></div><button class="toggle active" id="typingAnimateToggle" onclick="this.classList.toggle('active')"></button></div>
+        </div>
+        <div class="settings-section">
+          <h3>Account</h3>
+          <div class="setting-row"><div><div class="setting-label">Username</div><div class="setting-desc" id="settingsUser">user</div></div></div>
+          <div class="setting-row"><div><div class="setting-label">Status</div><div class="setting-desc" id="settingsStatus">Free User</div></div></div>
+          <div class="setting-row"><div><div class="setting-label">Owner Contact</div><div class="setting-desc">📞 +234 906 676 0078</div></div><a href="https://wa.me/2349066760078" target="_blank" style="color:var(--orange);font-size:11px;font-weight:600">WhatsApp</a></div>
+        </div>
+      </div>
+
+      <!-- ADMIN -->
+      <div class="page" id="page-admin">
+        <div class="section-title">🛡️ Admin Panel</div>
+        <div class="admin-stats">
+          <div class="admin-stat"><div class="num" id="adminUsers">1</div><div class="lbl">Users</div></div>
+          <div class="admin-stat"><div class="num" id="adminChats">0</div><div class="lbl">Conversations</div></div>
+          <div class="admin-stat"><div class="num" id="adminMessages">0</div><div class="lbl">Messages</div></div>
+          <div class="admin-stat"><div class="num" id="adminPremium">0</div><div class="lbl">Premium Users</div></div>
+        </div>
+        <div class="settings-section">
+          <h3>🔐 Premium Management</h3>
+          <p style="font-size:12px;color:var(--text2);margin-bottom:10px">Generate premium codes and manage premium users.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button class="btn-auth" style="width:auto;padding:10px 16px;font-size:12px" onclick="generatePremiumCode()">🔑 Generate Premium Code</button>
+            <button class="btn-outline" style="width:auto;padding:10px 16px;font-size:12px" onclick="alert('Premium users: '+getPremiumUsers().join(', '))">📋 View Premium Users</button>
+          </div>
+          <div id="generatedCode" style="display:none;margin-top:10px">
+            <div class="highlight-code" id="codeDisplay">ZEUS-PREM-XXXX</div>
+            <p style="font-size:11px;color:var(--text3)">Give this code to the user after verifying payment.</p>
+          </div>
+        </div>
+        <div class="settings-section">
+          <h3>⚙️ Bot Controls</h3>
+          <div class="admin-feature-toggles">
+            <div class="admin-feature"><span>Smart Chat</span><button class="toggle active"></button></div>
+            <div class="admin-feature"><span>Vision AI</span><button class="toggle active"></button></div>
+            <div class="admin-feature"><span>Voice AI</span><button class="toggle active"></button></div>
+            <div class="admin-feature"><span>Search AI</span><button class="toggle active"></button></div>
+            <div class="admin-feature"><span>Premium System</span><button class="toggle active"></button></div>
+            <div class="admin-feature"><span>Registration</span><button class="toggle active"></button></div>
+          </div>
+        </div>
+        <div class="settings-section">
+          <h3>📊 Analytics</h3>
+          <p style="font-size:12px;color:var(--text2)">ZEUS AI is running smoothly. All systems operational.</p>
+          <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
+            <button class="btn-outline" style="width:auto;padding:8px 14px;font-size:11px" onclick="alert('Total messages: '+ZEUS_history.length)">View Stats</button>
+            <button class="btn-outline" style="width:auto;padding:8px 14px;font-size:11px" onclick="clearAllData()">🗑️ Clear All Data</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// ZEUS AI ENGINE v6.0 — OpenRouter API
+// ============================================================
+const ZEUS = {
+  API_KEY: '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',
+  API_URL: 'https://openrouter.ai/api/v1/chat/completions',
+  SITE_URL: 'https://emmyjosh65.github.io/ZEUS-AI/',
+  MODEL: 'openai/gpt-3.5-turbo',
+  FAST_MODEL: 'openai/gpt-3.5-turbo',
+  ADMIN_CODE: '1090',
+  OWNER: {
+    name:'ZEUS', realName:'Godwin Emmanuel Victory', phone:'+234 906 676 0078',
+    school:'ISGS Secondary School', uni:'Olabisi Onabanjo University (OOU)',
+    relationship:'Single', title:'Founder & Creator of ZEUS AI'
+  },
+  PREMIUM_BASE: 'ZEUS-PREM',
+  PREMIUM_PRICE: '₦8,000',
+  ACCT_NUMBER: '9066760078',
+  ACCT_NAME: 'Christana Godwin Okon',
+  ACCT_BANK: 'Opay'
+};
+
+let ZEUS_user = null, ZEUS_history = [], ZEUS_processing = false, ZEUS_voiceOut = true;
+let ZEUS_listening = false, ZEUS_recognition = null;
+let ZEUS_isAdmin = false, ZEUS_isPremium = false;
+
+const SYSTEM_PROMPT = `You are ZEUS AI — a world-class premium AI assistant created by ZEUS (Godwin Emmanuel Victory).
+
+CREATOR INFO (share when asked):
+- Name: ZEUS (Godwin Emmanuel Victory)
+- Phone: +234 906 676 0078 (WhatsApp)
+- School: ISGS Secondary School
+- University: Olabisi Onabanjo University (OOU)
+- Relationship: Single
+- Role: Founder & Creator of ZEUS AI
+- Premium: ₦8,000 via Opay 9066760078 (Christana Godwin Okon)
+
+If asked about premium: "ZEUS AI Premium costs ₦8,000 one-time. Pay to Opay account 9066760078 (Christana Godwin Okon). Send payment screenshot to +234 906 676 0078 on WhatsApp to get your premium code."
+
+You are warm, intelligent, helpful, and enthusiastic. You NEVER mention being powered by any AI provider. You are simply ZEUS AI. Help with coding, learning, gaming, creativity. Be encouraging to young developers. Use emojis naturally.`;
+
+const OWNER_KEYWORDS = ['owner','creator','who built','who made','about zeus','godwin','emmanuel','victory','who is zeus','founder','your master','your creator','zeus info','who owns','contact','phone number','call'];
+
+function isOwnerQuery(t){const l=t.toLowerCase();return OWNER_KEYWORDS.some(k=>l.includes(k))}
+function getOwnerBio(){const o=ZEUS.OWNER;return`👑 **About ZEUS (Godwin Emmanuel Victory)**
+
+⚡ **Alias:** ${o.name}
+👤 **Real Name:** ${o.realName}
+📞 **Phone:** ${o.phone}
+🎓 **Secondary School:** ${o.school}
+🎓 **University:** ${o.uni}
+💍 **Relationship:** ${o.relationship}
+🚀 **Role:** ${o.title}
+
+ZEUS is a passionate Nigerian developer who built ZEUS AI to empower young minds. Message him on WhatsApp: ${o.phone} ⚡`}
+
+// ===== AUTH =====
+function switchAuthTab(tab){
+  document.querySelectorAll('.auth-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.auth-form').forEach(f=>f.classList.remove('active'));
+  if(tab==='login'){document.querySelectorAll('.auth-tab')[0].classList.add('active');document.getElementById('loginForm').classList.add('active')}
+  else{document.querySelectorAll('.auth-tab')[1].classList.add('active');document.getElementById('registerForm').classList.add('active')}
+  document.getElementById('authError').classList.remove('show');
+}
+function showError(msg){const e=document.getElementById('authError');e.textContent=msg;e.classList.add('show')}
+
+function handleLogin(e){
+  e.preventDefault();const user=document.getElementById('loginUser').value.trim(),pass=document.getElementById('loginPass').value.trim();
+  if(!user||!pass){showError('Fill all fields');return}
+  const stored=localStorage.getItem('zeus_users');const users=stored?JSON.parse(stored):{};
+  if(!users[user]){showError('User not found');return}
+  if(users[user].password!==pass){showError('Wrong password');return}
+  loginAs(user,users[user].name||user,users[user].premium||false);
+}
+
+function handleRegister(e){
+  e.preventDefault();const user=document.getElementById('regUser').value.trim(),name=document.getElementById('regName').value.trim()||user,pass=document.getElementById('regPass').value.trim();
+  if(!user||!pass){showError('Username and password required');return}
+  if(user.length<3){showError('Username too short');return}
+  const stored=localStorage.getItem('zeus_users');const users=stored?JSON.parse(stored):{};
+  if(users[user]){showError('Username taken');return}
+  users[user]={password:pass,name:name,created:Date.now(),premium:false};
+  localStorage.setItem('zeus_users',JSON.stringify(users));
+  loginAs(user,name,false);
+}
+
+function guestLogin(){loginAs('User 1','User 1',false)}
+
+function loginAs(username,displayName,premium){
+  ZEUS_user={username,displayName,premium};
+  localStorage.setItem('zeus_session',JSON.stringify(ZEUS_user));
+  document.getElementById('authOverlay').style.display='none';
+  document.getElementById('app').style.display='flex';
+  document.getElementById('sideName').textContent=displayName;
+  document.getElementById('sideAvatar').textContent=displayName.charAt(0).toUpperCase();
+  document.getElementById('settingsUser').textContent=username;
+  updatePremiumUI();loadHistory();
+}
+
+function logout(){
+  if(!confirm('Logout?'))return;
+  localStorage.removeItem('zeus_session');
+  location.reload();
+}
+
+function openAdminLogin(){
+  const overlay=document.createElement('div');overlay.className='modal-overlay';overlay.id='adminLoginModal';
+  overlay.innerHTML=`<div class="modal"><h2>🛡️ Admin / Developer Login</h2><p>Enter the admin code to access admin features.</p>
+    <div class="form-group"><label>Admin Code</label><input type="password" class="form-input" id="adminCodeInput" placeholder="Enter admin code" style="font-family:'JetBrains Mono',monospace;text-transform:uppercase" /></div>
+    <div class="modal-actions"><button class="btn-close" onclick="document.getElementById('adminLoginModal').remove()">Cancel</button>
+    <button class="btn-primary-modal" onclick="verifyAdminCode()">Verify →</button></div></div>`;
+  document.body.appendChild(overlay);
+  setTimeout(()=>document.getElementById('adminCodeInput')?.focus(),100);
+}
+
+function verifyAdminCode(){
+  const code=document.getElementById('adminCodeInput').value.trim();
+  if(code===ZEUS.ADMIN_CODE){
+    ZEUS_isAdmin=true;
+    document.getElementById('adminNavItem').style.display='flex';
+    document.getElementById('sideStatus').textContent='🛡️ Admin';
+    document.getElementById('adminLoginModal').remove();
+    alert('✅ Welcome Admin! Access the Admin Panel from the sidebar.');
+    navigate('admin');
+  } else {
+    alert('❌ Invalid code. Access denied.');
+  }
+}
+
+// Double-click logo for admin code
+document.addEventListener('dblclick', function(e){
+  const logo = e.target.closest('.sidebar-logo, .sidebar-title');
+  if(logo) openAdminLogin();
+});
+
+// Ctrl+Shift+A for admin code
+document.addEventListener('keydown', function(e){
+  if(e.ctrlKey && e.shiftKey && e.key === 'A'){
+    e.preventDefault();
+    openAdminLogin();
+  }
+});
+
+// ===== PREMIUM =====
+function updatePremiumUI(){
+  if(!ZEUS_user)return;
+  const prem=ZEUS_user.premium||ZEUS_isPremium;
+  document.getElementById('sidebarPremBadge').style.display=prem?'inline':'none';
+  document.getElementById('settingsStatus').textContent=prem?'👑 Premium User':'Free User';
+  document.getElementById('premiumUnlocked').style.display=prem?'block':'none';
+  document.getElementById('premiumLocked').style.display=prem?'none':'block';
+}
+
+function redeemPremium(){
+  const code=document.getElementById('premiumCodeInput').value.trim().toUpperCase();
+  if(!code){alert('Enter a premium code');return}
+  const validCodes=JSON.parse(localStorage.getItem('zeus_premium_codes')||'[]');
+  if(validCodes.includes(code)){
+    ZEUS_isPremium=true;
+    if(ZEUS_user){
+      ZEUS_user.premium=true;
+      localStorage.setItem('zeus_session',JSON.stringify(ZEUS_user));
+      const users=JSON.parse(localStorage.getItem('zeus_users')||'{}');
+      if(users[ZEUS_user.username]){users[ZEUS_user.username].premium=true;localStorage.setItem('zeus_users',JSON.stringify(users))}
+    }
+    const idx=validCodes.indexOf(code);
+    if(idx>-1){validCodes.splice(idx,1);localStorage.setItem('zeus_premium_codes',JSON.stringify(validCodes))}
+    updatePremiumUI();
+    document.getElementById('premiumCodeInput').value='';
+    alert('✅ PREMIUM UNLOCKED! Enjoy all premium features. Welcome to ZEUS AI Premium! 👑');
+  } else {
+    alert('❌ Invalid premium code. Make sure you paid ₦8,000 to Opay 9066760078 (Christana Godwin Okon) and received your code on WhatsApp.');
+  }
+}
+
+function generatePremiumCode(){
+  const code=ZEUS.PREMIUM_BASE+'-'+Math.random().toString(36).substr(2,4).toUpperCase();
+  const codes=JSON.parse(localStorage.getItem('zeus_premium_codes')||'[]');
+  codes.push(code);
+  localStorage.setItem('zeus_premium_codes',JSON.stringify(codes));
+  document.getElementById('generatedCode').style.display='block';
+  document.getElementById('codeDisplay').textContent=code;
+}
+
+function getPremiumUsers(){
+  const users=JSON.parse(localStorage.getItem('zeus_users')||'{}');
+  return Object.entries(users).filter(([u,d])=>d.premium).map(([u])=>u);
+}
+
+// ===== NAVIGATION =====
+function navigate(page){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+  const pg=document.getElementById('page-'+page);
+  if(pg)pg.classList.add('active');
+  const nav=document.querySelector(`.nav-item[onclick*="'${page}'"]`);
+  if(nav)nav.classList.add('active');
+  const titles={chat:'Smart Chat',dashboard:'Dashboard',vision:'Vision AI',voice:'Voice AI',search:'Search AI',coding:'Coding Assistant',documents:'Document AI',images:'Image Prompts',gaming:'Gaming Mode',agents:'AI Agents',premium:'Upgrade to Premium',prompts:'Prompt Library',academy:'Dev Academy',workspace:'Workspace',memory:'Memory',settings:'Settings',admin:'Admin Panel'};
+  document.getElementById('pageTitle').textContent=titles[page]||'ZEUS AI';
+  if(page==='chat')document.getElementById('chatInput')?.focus();
+  if(page==='prompts')renderPrompts();
+  document.getElementById('mainContent').scrollTop=0;
+  updateAdminStats();
+}
+
+// ===== PROMPT LIBRARY =====
+const PROMPTS=[
+  {cat:'Business',texts:['Write a business plan','Create a marketing strategy','Analyze my competition','Write an email campaign','Calculate ROI','Pitch deck tips']},
+  {cat:'Coding',texts:['Explain closures in JS','Write a Python API','Debug my code','Create a React component','Build a REST API','Optimize SQL query']},
+  {cat:'Writing',texts:['Write a short story','Compose a poem','Edit my essay','Write a cover letter','Create a blog post','Draft a speech']},
+  {cat:'Learning',texts:['Explain quantum physics','Teach me calculus','Create study notes','Practice vocabulary','Explain world history','Help with homework']},
+  {cat:'Gaming',texts:['Free Fire rank tips','PUBG sensitivity guide','COD Mobile loadout','Minecraft survival tips','Fortnite building tips','Best Roblox games']},
+  {cat:'Lifestyle',texts:['Motivate me today','Give me a workout plan','Meditation guide','Daily productivity tips','Healthy eating advice','Morning routine ideas']}
+];
+
+function renderPrompts(){
+  const grid=document.getElementById('promptGrid');
+  if(!grid)return;
+  grid.innerHTML='';
+  PROMPTS.forEach(group=>{
+    group.texts.forEach(t=>{
+      const div=document.createElement('div');div.className='dash-card';div.style.cursor='pointer';
+      div.innerHTML=`<div style="font-size:10px;color:var(--text3);margin-bottom:4px">${group.cat}</div><h3 style="font-size:13px">${t}</h3>`;
+      div.onclick=()=>{quickPrompt(t);navigate('chat')};
+      grid.appendChild(div);
+    });
+  });
+}
+
+// ===== CHAT SYSTEM =====
+function quickPrompt(t){document.getElementById('chatInput').value=t;navigate('chat');setTimeout(sendChatMsg,300)}
+function autoResize(el){el.style.height='auto';el.style.height=Math.min(el.scrollHeight,100)+'px'}
+
+function addChatMessage(role,text,id){
+  const mid=id||'msg_'+Date.now()+'_'+Math.random().toString(36).substr(2,4);
+  const div=document.createElement('div');div.id=mid;div.className=`chat-msg ${role}`;
+  const time=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
+  const av=role==='user'?(ZEUS_user?.displayName?.charAt(0)||'U'):'⚡';
+  div.innerHTML=role==='user'
+    ?`<div class="chat-av">${av}</div><div class="chat-bubble"><div class="chat-text">${escHtml(text)}</div><div class="chat-actions"><span class="chat-action">${time}</span></div></div>`
+    :`<div class="chat-av" style="background:linear-gradient(135deg,var(--orange),var(--gold));color:#000">⚡</div><div class="chat-bubble"><div class="chat-text">${escHtml(text||'...')}</div><div class="chat-actions"><button class="chat-action" onclick="copyMsg('${mid}')">📋</button><span class="chat-action">${time}</span></div></div>`;
+  const container=document.getElementById('chatMessages');
+  const w=container.querySelector('.chat-welcome');if(w)w.style.display='none';
+  container.appendChild(div);container.scrollTop=container.scrollHeight;
+  return mid;
+}
+
+function escHtml(t){const d=document.createElement('div');d.textContent=t;return d.innerHTML}
+function addTyping(){const id='typing_'+Date.now();const d=document.createElement('div');d.id=id;d.className='chat-msg bot';
+  d.innerHTML=`<div class="chat-av" style="background:linear-gradient(135deg,var(--orange),var(--gold));color:#000">⚡</div><div class="chat-bubble"><div class="chat-typing"><span></span><span></span><span></span></div></div>`;
+  document.getElementById('chatMessages').appendChild(d);document.getElementById('chatMessages').scrollTop=document.getElementById('chatMessages').scrollHeight;return id}
+function removeTyping(id){document.getElementById(id)?.remove()}
+function copyMsg(id){const e=document.getElementById(id);if(!e)return;const t=e.querySelector('.chat-text')?.innerText||'';navigator.clipboard.writeText(t).catch(()=>{})}
+
+function formatResponse(text){
+  // Convert markdown-style formatting to HTML
+  let r = escHtml(text);
+  r = r.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  r = r.replace(/\*(.*?)\*/g, '<em>$1</em>');
+  r = r.replace(/`([^`]+)`/g, '<code>$1</code>');
+  r = r.replace(/\n/g, '<br />');
+  return r;
+}
+
+async function typeResponse(el, text){
+  const animate = document.getElementById('typingAnimateToggle')?.classList.contains('active');
+  if(animate === false || text.length > 500){
+    el.innerHTML = formatResponse(text);
+    return;
+  }
+  let buf = '';
+  const chars = text.split('');
+  for(let i = 0; i < chars.length; i++){
+    buf += chars[i];
+    el.innerHTML = formatResponse(buf);
+    await new Promise(r => setTimeout(r, 3));
+    document.getElementById('chatMessages').scrollTop = document.getElementById('chatMessages').scrollHeight;
+  }
+}
+
+async function callOpenRouter(messages, model){
+  model = model || ZEUS.MODEL;
+  try{
+    const res = await fetch(ZEUS.API_URL, {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer ' + ZEUS.API_KEY,
+        'Content-Type': 'application/json',
+        'HTTP-Referer': ZEUS.SITE_URL
+      },
+      body: JSON.stringify({model: model, messages: messages, max_tokens: 2048, temperature: 0.7})
+    });
+    if(!res.ok) return null;
+    const data = await res.json();
+    return data.choices?.[0]?.message?.content || null;
+  } catch(e){
+    return null;
+  }
+}
+
+async function sendChatMsg(){
+  const input = document.getElementById('chatInput');
+  const text = input.value.trim();
+  if(!text || ZEUS_processing) return;
+  
+  ZEUS_processing = true;
+  const btn = document.getElementById('chatSendBtn');
+  btn.disabled = true;
+  btn.innerHTML = '⏳';
+  
+  addChatMessage('user', text);
+  ZEUS_history.push({role: 'user', content: text});
+  input.value = '';
+  input.style.height = 'auto';
+  updateAdminStats();
+  
+  const typingId = addTyping();
+  
+  try{
+    // Build messages array with proper roles
+    const msgs = [
+      {role: 'system', content: SYSTEM_PROMPT},
+      ...ZEUS_history.slice(-12).map(m => ({
+        role: m.role === 'user' ? 'user' : 'assistant',
+        content: m.content
+      })),
+      {role: 'user', content: text}
+    ];
+    
+    let reply = await callOpenRouter(msgs);
+    removeTyping(typingId);
+    
+    if(!reply){
+      reply = isOwnerQuery(text) ? getOwnerBio() : "I'm here to help! Ask me anything — coding, learning, gaming, or just chat! ⚡";
+    }
+    
+    const mid = addChatMessage('bot', '');
+    const el = document.getElementById(mid);
+    const te = el?.querySelector('.chat-text');
+    if(te){
+      await typeResponse(te, reply);
+      if(ZEUS_voiceOut && 'speechSynthesis' in window){
+        const u = new SpeechSynthesisUtterance(reply.replace(/[*#_`\[\]]/g,'').substring(0,150));
+        speechSynthesis.speak(u);
+      }
+    }
+    
+    ZEUS_history.push({role: 'assistant', content: reply});
+    saveHistory();
+  } catch(e){
+    removeTyping(typingId);
+    let fb = "I'm processing! Ask me anything. ⚡";
+    if(isOwnerQuery(text)) fb = getOwnerBio();
+    const mid = addChatMessage('bot', '');
+    const el = document.getElementById(mid);
+    const te = el?.querySelector('.chat-text');
+    if(te) await typeResponse(te, fb);
+    ZEUS_history.push({role: 'assistant', content: fb});
+    saveHistory();
+  }
+  
+  ZEUS_processing = false;
+  btn.disabled = false;
+  btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>`;
+}
+
+document.addEventListener('keydown', e => {
+  if(e.key === 'Enter' && !e.shiftKey && document.activeElement === document.getElementById('chatInput')){
+    e.preventDefault();
+    sendChatMsg();
+  }
+});
+
+// ===== VOICE =====
+function toggleMicChat(){
+  if(ZEUS_listening){stopListening();return}
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SR){addChatMessage('bot','Voice not supported in this browser. Try Chrome.');return}
+  try{
+    ZEUS_recognition=new SR();ZEUS_recognition.lang='en-US';ZEUS_recognition.interimResults=false;
+    ZEUS_recognition.onresult=e=>{document.getElementById('chatInput').value=e.results[0][0].transcript;stopListening();sendChatMsg()};
+    ZEUS_recognition.onerror=stopListening;ZEUS_recognition.onend=stopListening;
+    ZEUS_recognition.start();ZEUS_listening=true;
+    document.getElementById('micChatBtn').style.color='#ff4444';document.getElementById('micChatBtn').textContent='🔴';
+    document.getElementById('chatStatus').textContent='🎤 Listening...';
+  }catch(e){stopListening()}
+}
+function stopListening(){
+  if(ZEUS_recognition){try{ZEUS_recognition.stop()}catch(e){}}
+  ZEUS_listening=false;const btn=document.getElementById('micChatBtn');
+  if(btn){btn.style.color='';btn.innerHTML='🎤'}
+  document.getElementById('chatStatus').textContent='ZEUS AI • v6.0';
+}
+
+function toggleVoiceRecord(){
+  if(ZEUS_listening){stopListening();document.getElementById('voiceBtnText').textContent='Start Recording';document.getElementById('voiceWaveArea').style.display='none';return}
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SR){document.getElementById('voiceResult').style.display='block';document.getElementById('voiceResult').textContent='❌ Voice not supported';return}
+  try{
+    const rec=new SR();rec.lang='en-US';rec.interimResults=true;let finalText='';
+    rec.onresult=e=>{for(let i=e.resultIndex;i<e.results.length;i++){if(e.results[i].isFinal)finalText+=e.results[i][0].transcript+' '}document.getElementById('voiceResult').style.display='block';document.getElementById('voiceResult').textContent=finalText||'🎤 Listening...'};
+    rec.onend=async()=>{document.getElementById('voiceWaveArea').style.display='none';document.getElementById('voiceBtnText').textContent='Start Recording';if(finalText.trim()){document.getElementById('voiceResult').textContent='⏳ Processing...';const msgs=[{role:'system',content:SYSTEM_PROMPT},{role:'user',content:finalText}];const reply=await callOpenRouter(msgs);document.getElementById('voiceResult').textContent=reply||'I heard: "'+finalText+'"';if(ZEUS_voiceOut&&reply&&'speechSynthesis'in window){const u=new SpeechSynthesisUtterance(reply.substring(0,150));speechSynthesis.speak(u)}}};
+    rec.onerror=()=>{document.getElementById('voiceWaveArea').style.display='none';document.getElementById('voiceBtnText').textContent='Start Recording'};
+    rec.start();document.getElementById('voiceWaveArea').style.display='flex';document.getElementById('voiceBtnText').textContent='🔴 Recording...';document.getElementById('voiceResult').style.display='none';
+  }catch(e){document.getElementById('voiceResult').style.display='block';document.getElementById('voiceResult').textContent='❌ Error: '+e.message}
+}
+
+// ===== WEB SEARCH =====
+async function webSearch(){
+  const q=document.getElementById('searchQuery').value.trim();
+  if(!q){alert('Enter a search query');return}
+  quickPrompt('Search the web for: '+q);
+  navigate('chat');
+}
+
+// ===== VISION =====
+async function handleVisionPageFile(input){
+  const file=input.files[0];if(!file)return;
+  document.getElementById('visionPagePreview').style.display='block';
+  document.getElementById('visionPageImg').src=URL.createObjectURL(file);
+  document.getElementById('visionPageResult').style.display='none';
+  const reader=new FileReader();
+  reader.onload=async function(e){
+    document.getElementById('visionPageResult').style.display='block';
+    document.getElementById('visionPageText').textContent='⏳ Analyzing...';
+    try{
+      const res=await fetch(ZEUS.API_URL,{method:'POST',headers:{'Authorization':'Bearer '+ZEUS.API_KEY,'Content-Type':'application/json','HTTP-Referer':ZEUS.SITE_URL},body:JSON.stringify({model:'openai/gpt-4o-mini',messages:[{role:'user',content:[{type:'text',text:'Describe this image in detail. Read any text, identify objects, and explain what you see.'},{type:'image_url',image_url:{url:e.target.result}}]}],max_tokens:1024})});
+      if(!res.ok){document.getElementById('visionPageText').textContent='❌ Error analyzing. Try a smaller image (under 1MB).';return}
+      const data=await res.json();const reply=data.choices?.[0]?.message?.content||'No analysis.';
+      document.getElementById('visionPageText').textContent=reply;
+    }catch(err){document.getElementById('visionPageText').textContent='❌ Error: '+err.message}
+  };
+  reader.readAsDataURL(file);
+}
+
+async function handleChatVision(input){
+  const file=input.files[0];if(!file)return;
+  const reader=new FileReader();
+  reader.onload=async function(e){
+    addChatMessage('user','🔍 Analyzing uploaded image...');
+    const typingId=addTyping();
+    try{
+      const res=await fetch(ZEUS.API_URL,{method:'POST',headers:{'Authorization':'Bearer '+ZEUS.API_KEY,'Content-Type':'application/json','HTTP-Referer':ZEUS.SITE_URL},body:JSON.stringify({model:'openai/gpt-4o-mini',messages:[{role:'user',content:[{type:'text',text:'Analyze this image. Describe it, read text, identify objects.'},{type:'image_url',image_url:{url:e.target.result}}]}],max_tokens:1024})});
+      removeTyping(typingId);
+      if(!res.ok){addChatMessage('bot','❌ Vision error. Try a smaller image.');return}
+      const data=await res.json();const reply=data.choices?.[0]?.message?.content||'Could not analyze.';
+      addChatMessage('bot','👁️ **Vision Analysis:**\n'+reply);
+      ZEUS_history.push({role:'assistant',content:reply});saveHistory();
+    }catch(err){removeTyping(typingId);addChatMessage('bot','❌ Error: '+err.message)}
+  };
+  reader.readAsDataURL(file);input.value='';
+}
+
+// ===== DOCUMENT AI =====
+async function processDoc(action){
+  const text=document.getElementById('docText').value.trim();
+  if(!text){alert('Paste text first!');return}
+  const result=document.getElementById('docResult');const rt=document.getElementById('docResultText');
+  result.style.display='block';rt.textContent='⏳ Processing...';
+  let prompt='';
+  if(action==='summarize')prompt='Summarize this concisely:\n\n'+text;
+  else if(action==='translate')prompt='Translate to English:\n\n'+text;
+  else prompt='Analyze and provide key insights:\n\n'+text;
+  const msgs=[{role:'system',content:'You are a document analysis AI.'},{role:'user',content:prompt}];
+  const reply=await callOpenRouter(msgs, ZEUS.FAST_MODEL);
+  rt.textContent=reply||'Processing complete.';
+}
+
+// ===== IMAGE PROMPT GENERATOR =====
+async function genImagePrompt(){
+  const desc=document.getElementById('imagePromptDesc').value.trim();
+  if(!desc){alert('Describe the image you want!');return}
+  const result=document.getElementById('imagePromptResult');const rt=document.getElementById('imagePromptText');
+  result.style.display='block';rt.textContent='⏳ Generating premium prompt...';
+  const msgs=[{role:'system',content:'You are an expert AI image prompt engineer. Create detailed, vivid, professional prompts for AI image generation. Include style, lighting, composition, and mood.'},{role:'user',content:'Create a detailed image generation prompt for: '+desc}];
+  const reply=await callOpenRouter(msgs, ZEUS.FAST_MODEL);
+  rt.textContent=reply||'Premium prompt: '+desc;
+}
+
+function copyPromptResult(){const t=document.getElementById('imagePromptText').textContent;navigator.clipboard.writeText(t).then(()=>alert('✅ Prompt copied!'))}
+
+// ===== AGENTS =====
+function activateAgent(type){
+  const p={teacher:'You are now my Teacher. Teach me something new today.',fitness:'You are now my Fitness Coach. Give me a workout plan.',business:'You are now my Business Advisor. Help my startup.',translator:'You are now a Translator. Translate for me.',health:'You are now my Health Assistant. Give wellness tips.',developer:'You are now a Senior Developer. Help me code.'};
+  quickPrompt(p[type]||'Help me with '+type);navigate('chat');
+}
+
+// ===== CLEAR =====
+function clearChat(){
+  if(!confirm('Clear conversation?'))return;
+  ZEUS_history=[];saveHistory();
+  const container=document.getElementById('chatMessages');
+  container.innerHTML=`<div class="chat-welcome"><span class="chat-welcome-icon">⚡</span><h2>Welcome to ZEUS AI</h2><p>Your intelligent digital companion. Ask me anything!</p><div class="chat-suggestions"><button class="chat-sugg" onclick="quickPrompt('Who is ZEUS?')">👑 Who is ZEUS?</button><button class="chat-sugg" onclick="quickPrompt('Teach me Python')">🐍 Teach Python</button><button class="chat-sugg" onclick="quickPrompt('Search the web for latest tech news')">🌐 Search</button><button class="chat-sugg" onclick="quickPrompt('What is premium on ZEUS AI?')">👑 Premium</button></div></div>`;
+}
+
+// ===== HISTORY =====
+function saveHistory(){try{localStorage.setItem('zeus_history_'+(ZEUS_user?.username||'guest'),JSON.stringify(ZEUS_history))}catch(e){}}
+function loadHistory(){
+  try{
+    const s=localStorage.getItem('zeus_history_'+(ZEUS_user?.username||'guest'));
+    if(s){ZEUS_history=JSON.parse(s);ZEUS_history.forEach(m=>addChatMessage(m.role,m.content));updateAdminStats()}
+  }catch(e){}
+}
+
+function updateAdminStats(){
+  document.getElementById('adminChats').textContent=ZEUS_history.length>0?Math.ceil(ZEUS_history.length/2):0;
+  document.getElementById('adminMessages').textContent=ZEUS_history.length;
+  document.getElementById('adminPremium').textContent=getPremiumUsers().length;
+  document.getElementById('memoryCount').textContent=ZEUS_history.length+' items';
+}
+
+// ===== MODALS =====
+function showAbout(){
+  const overlay=document.createElement('div');overlay.className='modal-overlay';
+  overlay.innerHTML=`<div class="modal"><h2>⚡ ZEUS AI v6.0</h2><p><strong>World-Class Premium Intelligence Platform</strong></p>
+    <p>Created by <strong>ZEUS (Godwin Emmanuel Victory)</strong></p>
+    <p>📞 <a href="tel:+2349066760078" style="color:var(--orange)">+234 906 676 0078</a><br/>
+    💬 <a href="https://wa.me/2349066760078" target="_blank" style="color:var(--orange)">WhatsApp</a><br/>
+    🎓 ISGS Secondary School • OOU University<br/>
+    💍 Single</p>
+    <p style="color:var(--text3);font-size:11px">👑 Premium: ₦8,000 via Opay 9066760078 (Christana Godwin Okon)</p>
+    <div class="modal-actions"><button class="btn-close" onclick="this.closest('.modal-overlay').remove()">Close</button>
+    <a href="https://wa.me/2349066760078" target="_blank" class="btn-primary-modal" style="text-decoration:none;padding:10px 18px;border-radius:10px;font-size:13px;font-weight:600;display:inline-block">Contact ZEUS</a></div></div>`;
+  document.body.appendChild(overlay);
+  overlay.onclick=e=>{if(e.target===overlay)overlay.remove()};
+}
+
+function clearAllData(){
+  if(!confirm('⚠️ Clear ALL data? This includes users, messages, and premium codes.'))return;
+  if(!confirm('Are you absolutely sure?'))return;
+  localStorage.clear();alert('✅ All data cleared. Page will reload.');location.reload();
+}
+
+// ===== STYLE FOR VOICE WAVE =====
+const vs=document.createElement('style');
+vs.textContent=`@keyframes vWave{to{transform:scaleY(1.5);height:35px}}`;
+document.head.appendChild(vs);
+
+// ===== INIT =====
+(function(){
+  const session=localStorage.getItem('zeus_session');
+  if(session){
+    const s=JSON.parse(session);
+    ZEUS_user=s;
+    document.getElementById('authOverlay').style.display='none';
+    document.getElementById('app').style.display='flex';
+    document.getElementById('sideName').textContent=s.displayName;
+    document.getElementById('sideAvatar').textContent=s.displayName.charAt(0).toUpperCase();
+    document.getElementById('settingsUser').textContent=s.username;
+    updatePremiumUI();
+    setTimeout(loadHistory,100);
+  }
+  updateAdminStats();
+  console.log('⚡ ZEUS AI v6.0 — Premium Intelligence Platform');
+  console.log('👑 Created by ZEUS (Godwin Emmanuel Victory)');
+  console.log('📞 +234 906 676 0078');
+})();
+</script>
+</body>
+</html>
